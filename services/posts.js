@@ -16,5 +16,13 @@ module.exports = {
     } catch (error) {
       throw new Error(e);
     }
+  },
+
+  getPostById: async(id) => {
+    try {
+      return postDbService.getPostById(id);
+    } catch (error) {
+      throw new Error(e);
+    }
   }
 }

@@ -23,8 +23,14 @@ ctrl.newPost = (req, res) => {
   return res.render('pages/new-post');
 }
 
-ctrl.singlePost = (req, res) => {
-  return res.render('pages/single-post');
+ctrl.singlePost = async (req, res) => {
+  try {
+    const {id} = req.params;
+    const post = await postService.getPostById(id);
+    return res.render('pages/single-post', {post});
+  } catch (error) {
+    throw next(error);
+  }
 }
 
 module.exports = ctrl;

@@ -9,7 +9,6 @@ ctrl.create = async (req, res) => {
   } catch (error) {
     return next(e);
   }
-  
 } 
 
 module.exports = ctrl;
