@@ -1,6 +1,7 @@
-const path = require('path')
-const express = require('express')
-const uiRouter = require('../routes/ui')
+const path = require('path');
+const express = require('express');
+const uiRouter = require('../routes/ui');
+const postRouter = require('../routes/posts');
 
 const expressLoader = async({app}) => {
   // static files
@@ -9,6 +10,7 @@ const expressLoader = async({app}) => {
   app.set('view engine', 'pug');
   // set main route
   app.use('/', uiRouter);
+  app.use('/api', postRouter);
   return app;
 }
 
