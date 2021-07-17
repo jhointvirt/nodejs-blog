@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block content
+  h1 Create new post
+  .container
+  .row
+    .col-md-8.offset-md-2
+      form(autocomplete='off', id='newPost', novalidate='')
+        .form-group
+          label(for='title') Title
+          input#title.form-control(type='text' placeholder='Enter post title')
+        .form-group
+          label(for='description') Description
+          input#description.form-control(type='text' placeholder='Enter post description')
+        .form-group
+          label(for='content') Content textarea
+          textarea#content.form-control(rows='3')
+        button.btn.btn-primary#submit(type='submit') Submit

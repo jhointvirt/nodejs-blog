@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block content
+  h1 Posts
+  .container
+  .row
+    .col-md-8.offset-md-2
+        .card.text-center.mb-2
+          .card-body
+            h5.card-title= Title
+            p.card-text= Description
+            a.btn.btn-primary(href='/posts/' + 1, target='_blank') Go to post
+          .card-footer.text-muted= Date
