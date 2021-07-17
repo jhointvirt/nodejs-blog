@@ -1,3 +1,5 @@
+const postService = require('../services/posts')
+
 let ctrl = {};
 
 ctrl.main = (req, res) => {
@@ -8,8 +10,13 @@ ctrl.about = (req, res) => {
   return res.render('pages/about');
 }
 
-ctrl.posts = (req, res) => {
-  return res.render('pages/posts');
+ctrl.posts = async (req, res, next) => {
+  try {
+    const result = await postService.getLatestPosts(5);
+    return res.render('pages/posts', {posts: result || []});
+  } catch (error) {
+    throw next(error);
+  }
 }
 
 ctrl.newPost = (req, res) => {

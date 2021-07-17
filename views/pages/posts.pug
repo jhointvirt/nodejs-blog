@@ -5,9 +5,10 @@ block content
   .container
   .row
     .col-md-8.offset-md-2
+      each post in posts
         .card.text-center.mb-2
           .card-body
-            h5.card-title= Title
-            p.card-text= Description
-            a.btn.btn-primary(href='/posts/' + 1, target='_blank') Go to post
-          .card-footer.text-muted= Date
+            h5.card-title= post.title
+            p.card-text= post.description
+            a.btn.btn-primary(href='/posts/' + post._id, target='_blank') Go to post
+          .card-footer.text-muted= toDateString(post.date)
