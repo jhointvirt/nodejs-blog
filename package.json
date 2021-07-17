@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Egor-kl/nodejs-blog#readme",
   "dependencies": {
+    "@hapi/boom": "^9.1.3",
     "@hapi/joi": "^17.1.1",
     "express": "^4.17.1",
     "mongoose": "^5.13.3",

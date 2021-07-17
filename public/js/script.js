@@ -15,7 +15,13 @@ if(window.location.pathname === '/new-post'){
       body: JSON.stringify(data)
     }).then((res) => res.json())
     .then((res) => {
-      console.log(res);
+      if(res && res.payload && res.payload.statusCode === 400){
+        alert(res.payload.message);
+      }
+      
+      if(res && res._id){
+        window.location.replace('/posts');
+      }
     }).catch((err) => {
       alert(err);
     })
