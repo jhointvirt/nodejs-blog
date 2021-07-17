@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Egor-kl/nodejs-blog.git"
+  },
+  "author": "Egor Kliutsuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Egor-kl/nodejs-blog/issues"
+  },
+  "homepage": "https://github.com/Egor-kl/nodejs-blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
