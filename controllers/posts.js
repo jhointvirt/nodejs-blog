@@ -9,6 +9,16 @@ ctrl.create = async (req, res) => {
   } catch (error) {
     return next(e);
   }
-} 
+}
+
+ctrl.delete = async(req, res) => {
+  try {
+    const {id} = req.params;
+    const result = await postService.deletePostById(id);
+    return res.status(204).json(result);
+  } catch (error) {
+    return next(e);
+  }
+}
 
 module.exports = ctrl;

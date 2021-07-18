@@ -28,4 +28,13 @@ obj.getPostById = async (id) => {
   }
 }
 
+obj.deletePostById = async (id) => {
+  try {
+    const post = PostModel.findById(id);
+    return await PostModel.deleteOne(post);
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
 module.exports = obj

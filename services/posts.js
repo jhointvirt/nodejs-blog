@@ -1,4 +1,4 @@
-const { getLatestPosts } = require('../db/post');
+const { getLatestPosts, deletePostById } = require('../db/post');
 const postDbService = require('../db/post');
 
 module.exports = {
@@ -24,5 +24,13 @@ module.exports = {
     } catch (error) {
       throw new Error(e);
     }
-  }
+  },
+
+  deletePostById: async(id) =>{
+    try {
+      return postDbService.deletePostById(id);
+    } catch (error) {
+      throw new Error(e);
+    }
+  },
 }

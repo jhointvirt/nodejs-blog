@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-uiController = require('../controllers/ui')
+uiController = require('../controllers/ui');
+postController = require('../controllers/posts');
 
 // get main page
 router.get('/', uiController.main);
@@ -12,5 +13,7 @@ router.get('/posts', uiController.posts);
 router.get('/new-post', uiController.newPost);
 // GET post
 router.get('/posts/:id', uiController.singlePost);
+// DELETE post
+router.delete('/posts/:id', postController.delete);
 
 module.exports = router;
